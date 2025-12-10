@@ -1,0 +1,111 @@
+:root {
+    --first-color: #ff3300;
+    --second-color: #88ff00;
+    --third-color: #003311;
+    --first-background: #005533;
+    --seсond-background: #333377;
+    --second-background-t: #33335599;
+    --neutral: #009999;
+    --bright: #ffff00;
+    --k: 1000;
+    --c: 3000;
+}
+
+/* Заголовок Сайта */
+@font-face {
+    font-family: Title-font;
+    src: url(Становление/Melodrama.ttf);
+}
+/* Меню страниц */
+@font-face {
+    font-family: Menu1-font;
+    src: url(Становление/Clarmont.ttf);
+}
+/* Меню блоков */
+@font-face {
+    font-family: Menu2-font;
+    src: url(Становление/Runtti.otf);
+}
+/* Подпись под философами */
+@font-face {
+    font-family: Hand-font;
+    src: url(Становление/Betmo.otf);
+}
+/* Оборотка философов */
+@font-face {
+    font-family: Text-font;
+    src: url(Становление/Lonely.otf);
+}
+/* Слайды */
+@font-face {
+    font-family: Slide-font;
+    src: url(Становление/Jun.otf);
+}
+
+.name h1 {
+    font-size: 5vmax;
+    font-family: Title-font;
+
+    text-shadow: #000000 calc(60vmax / var(--k) * 01)
+            calc(60vmax / var(--k) * 01 / 1.3),
+        #331100 calc(60vmax / var(--k) * 02) calc(60vmax / var(--k) * 02 / 1.3),
+        #442200 calc(60vmax / var(--k) * 03) calc(60vmax / var(--k) * 03 / 1.3),
+        #553300 calc(60vmax / var(--k) * 04) calc(60vmax / var(--k) * 04 / 1.3),
+        #664400 calc(60vmax / var(--k) * 05) calc(60vmax / var(--k) * 05 / 1.3),
+        #775500 calc(60vmax / var(--k) * 06) calc(60vmax / var(--k) * 06 / 1.3),
+        #886600 calc(60vmax / var(--k) * 07) calc(60vmax / var(--k) * 07 / 1.3),
+        #997700 calc(60vmax / var(--k) * 08) calc(60vmax / var(--k) * 08 / 1.3),
+        #aa8800 calc(60vmax / var(--k) * 09) calc(60vmax / var(--k) * 09 / 1.3),
+        #bb9900 calc(60vmax / var(--k) * 10) calc(60vmax / var(--k) * 10 / 1.3),
+        #ccaa00 calc(60vmax / var(--k) * 11) calc(60vmax / var(--k) * 11 / 1.3),
+        #ddbb00 calc(60vmax / var(--k) * 12) calc(60vmax / var(--k) * 12 / 1.3),
+        #eecc00 calc(60vmax / var(--k) * 13) calc(60vmax / var(--k) * 13 / 1.3),
+        #ffdd00 calc(60vmax / var(--k) * 14) calc(60vmax / var(--k) * 14 / 1.3);
+}
+
+.main-nav a[href="#page2"],
+.main-nav a[href="#page2"]:hover,
+.main-nav a[href="#page2"]:active {
+    color: var(--first-color);
+    font-weight: bold;
+}
+
+.main-nav li a {
+    text-decoration: none;
+    color: var(--second-color);
+    text-shadow: #000000 0 0 0,
+        #331100 calc(100vw / var(--c) * 4) calc(100vw / var(--c) * 4)
+            calc(100vw / 1200 * 4),
+        #772200 calc(100vw / var(--c) * 5) calc(100vw / var(--c) * 5)
+            calc(100vw / 1200 * 5),
+        #aa3300 calc(-100vw / var(--c) * 6) calc(-100vw / var(--c) * 6)
+            calc(100vw / 1200 * 6),
+        #bb4400 calc(100vw / var(--c) * 6) calc(100vw / var(--c) * 6)
+            calc(100vw / 1200 * 6),
+        #cc5500 calc(-100vw / var(--c) * 12) calc(-100vw / var(--c) * 12)
+            calc(100vw / 1200 * 12),
+        #ff6600 calc(100vw / var(--c) * 12) calc(100vw / var(--c) * 12)
+            calc(100vw / 1200 * 12);
+    font-weight: bold;
+}
+
+.anchor-nav a {
+    text-decoration: none;
+    color: var(--second-color);
+    text-shadow: #111111 calc(60vmax / var(--k) * 01)
+            calc(60vmax / var(--k) * 01 / 1.3),
+        #003333 calc(60vmax / var(--k) * 02) calc(60vmax / var(--k) * 02 / 1.3),
+        #004444 calc(60vmax / var(--k) * 03) calc(60vmax / var(--k) * 03 / 1.3),
+        #005555 calc(60vmax / var(--k) * 04) calc(60vmax / var(--k) * 04 / 1.3),
+        #006666 calc(60vmax / var(--k) * 05) calc(60vmax / var(--k) * 05 / 1.3),
+        #007777 calc(60vmax / var(--k) * 06) calc(60vmax / var(--k) * 06 / 1.3),
+        #008888 calc(60vmax / var(--k) * 07) calc(60vmax / var(--k) * 07 / 1.3),
+        #009999 calc(60vmax / var(--k) * 08) calc(60vmax / var(--k) * 08 / 1.3),
+        #00aaaa calc(60vmax / var(--k) * 09) calc(60vmax / var(--k) * 09 / 1.3),
+        #00bbbb calc(60vmax / var(--k) * 10) calc(60vmax / var(--k) * 10 / 1.3),
+        #00cccc calc(60vmax / var(--k) * 11) calc(60vmax / var(--k) * 11 / 1.3),
+        #00dddd calc(60vmax / var(--k) * 12) calc(60vmax / var(--k) * 12 / 1.3),
+        #00eeee calc(60vmax / var(--k) * 13) calc(60vmax / var(--k) * 13 / 1.3),
+        #00ffff calc(60vmax / var(--k) * 14) calc(60vmax / var(--k) * 14 / 1.3);
+    font-weight: 900;
+}

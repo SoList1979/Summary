@@ -1,0 +1,797 @@
+/* Обнуление и настройки */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    scroll-behavior: smooth;
+    background: transparent;
+    line-height: 1.6;
+    overflow-y: scroll;
+}
+
+#bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Самый нижний слой */
+}
+
+/* Анимация рапзлома в верхнем блоке */
+@keyframes narrow-shake {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(1vh);
+    }
+    75% {
+        transform: translateY(0.5vh);
+    }
+}
+
+/* Скрытие скроллбара (сохранение функционала) */
+body::-webkit-scrollbar {
+    display: none;
+}
+
+#bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+img {
+    pointer-events: none;
+    cursor: pointer;
+}
+
+.header,
+.footer {
+    background: var(--first-background);
+    color: var(--first-color);
+    box-shadow: 0 0 0 #000000, inset 2vmin 2vmin 4vmin var(--third-color),
+        inset -2vmin -2vmin 4vmin var(--third-color);
+    border: solid 1vmin var(--neutral);
+}
+
+/* Подвал */
+.footer {
+    width: 100%;
+    text-align: center;
+    padding: 2vh 0;
+    font-family: Menu1-font;
+}
+
+/* ШАПКА */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2.25vh 4vw;
+    z-index: 1000;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 22vh;
+}
+
+.name {
+    padding-left: 10vw;
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+    user-select: none;
+}
+
+.main-nav {
+    font-size: 2vmax;
+    font-family: Menu1-font;
+    margin-bottom: 2vh;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 4vw;
+    justify-content: center;
+}
+
+.main-nav li a:hover {
+    color: var(--bright);
+}
+
+.main-nav li a:active {
+    color: var(--first-color);
+}
+
+.anchor-nav {
+    width: 10vw;
+    font-family: Menu2-font;
+    font-size: 1.5vmax;
+}
+
+.anchor-nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+}
+
+.anchor-nav a:hover {
+    text-decoration: none;
+    color: var(--neutral);
+}
+
+.anchor-nav a:active {
+    text-decoration: none;
+    color: var(--first-color);
+}
+
+/* Бургер-меню */
+.burger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    width: 7vmin;
+    height: 4vmax;
+    background: transparent;
+    border: none;
+    margin-right: 1.5vmin;
+}
+
+.burger div:hover {
+    background: var(--first-color);
+}
+
+.burger div {
+    width: 100%;
+    height: 1.1vmax;
+    border-radius: 0.4vmin;
+    margin: 0;
+    background: var(--neutral);
+}
+
+/* ОСНОВНОЙ КОНТЕНТ */
+.main {
+    margin-top: 22vh;
+    min-height: 100vh;
+    padding: 2vh 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.content-block {
+    padding: 2vmin;
+    min-height: 20vh;
+    width: 90vw;
+    margin-left: 5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Блок 1: Антагонисты */
+.antagonists-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2vw;
+    width: 100%;
+    height: 55vh;
+    padding: 4vh;
+    border: solid var(--second-color) 0.4vw;
+    background-color: var(--second-background-t);
+    color: var(--second-color);
+    box-shadow: 0 0 0 #000000, inset 2vmin 2vmin 4vmin var(--seсond-background),
+        inset -2vmin -2vmin 4vmin var(--seсond-background);
+    border-radius: 1.2vw;
+}
+
+.card {
+    width: 16vw;
+    height: 24vw;
+    perspective: 1000px;
+    transform: rotateY(0) translateY(0);
+    transition: transform 0.3s ease;
+}
+
+.flip-card:first-child {
+    transform: rotateY(-15deg) rotateZ(6deg) rotateX(12deg);
+}
+
+.flip-card:first-child:hover {
+    transform: translateY(-1vh) rotateZ(0);
+}
+
+.flip-card:last-child {
+    transform: rotateY(-15deg) rotateZ(-6deg) rotateX(-12deg);
+}
+
+.flip-card:last-child:hover {
+    transform: translateY(-1vh) rotateZ(0);
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flip-card.flipped .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 1.2vmax;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+    user-select: none;
+    font-size: 1vmax;
+    text-align: center;
+}
+
+.flip-card-back {
+    transform: rotateY(180deg);
+    color: var(--second-color);
+}
+
+.portrait-wrapper {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background: #00000000;
+}
+
+.portrait {
+    width: auto;
+    height: 100%;
+    object-fit: contain;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.nameplate {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 2vmin;
+    font-family: Hand-font;
+}
+
+.nameplate-line {
+    width: 100%;
+    overflow: hidden;
+    font-family: Hand-font;
+}
+
+p {
+    font-family: Text-font;
+    font-size: 2vmin;
+    text-align: justify;
+    padding: 2vmin;
+}
+
+.divider {
+    width: 4vmax;
+    height: 24vmax;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bottom-z-pic,
+.top-z-pic {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.bottom-z-pic img,
+.top-z-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.bottom-z-pic {
+    z-index: 1;
+    width: 200%;
+    left: -50%;
+}
+
+.top-z-pic {
+    z-index: 2;
+    width: 50%;
+    left: 25%;
+}
+
+.divider:hover .top-z-pic {
+    animation: narrow-shake 0.5s ease-in-out;
+    width: 50%;
+}
+
+/* Блок 2: Слайдер */
+.slider-container {
+    position: relative;
+    width: 92vw;
+    height: 70vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: solid var(--first-color) 0.4vw;
+    background-color: var(--first-background-t);
+    font-family: Slide-font;
+    font-size: 1.8vh;
+    box-shadow: 0 0 0 #000000, inset 2vmin 2vmin 4vmin var(--first-background-t),
+        inset -2vmin -2vmin 4vmin var(--first-background-t);
+    border-radius: 1.2vw;
+}
+
+.slider-wrapper {
+    flex: 1;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.slider-track {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    min-height: 100%;
+    height: auto;
+}
+
+.slide {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    background-color: #00555588;
+    max-height: 80vh;
+    min-height: 60vh;
+    margin-top: 0;
+}
+
+.slider-button {
+    background: var(--third-color-t);
+    color: var(--second-color);
+    border: solid 0.2vmin var(--second-color);
+    cursor: pointer;
+    opacity: 0.8;
+    z-index: 10;
+}
+
+.slider-button:hover {
+    color: var(--bright);
+    background-color: var(--neutral);
+    border: solid var(--bright) 0.2vmin;
+}
+
+.slider-button:active {
+    color: var(--first-color);
+    border: solid 0.2vmin var(--first-color);
+    background-color: var(--seсond-background);
+}
+
+.slider-button.prev,
+.slider-button.next {
+    width: 4vh;
+    height: 4vh;
+    border-radius: 50%;
+    font-size: 3vh;
+    margin: 1vmin;
+}
+
+.slider-dots {
+    position: absolute;
+    right: 1vw;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2vh;
+}
+
+.dot {
+    width: 2vmin;
+    height: 2vmin;
+    background-color: var(--second-color);
+    border: solid 0.2vmin var(--first-color);
+    border-radius: 1vmin;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot:hover {
+    background-color: var(--neutral);
+    border: solid var(--bright) 0.2vmin;
+}
+
+.dot.active {
+    background-color: var(--first-color);
+    border: solid var(--second-color) 0.2vmin;
+}
+
+.no-tilt {
+    transform: none !important;
+}
+
+.no-tilt:hover {
+    transform: translateY(-1vh) rotateZ(0) !important;
+}
+
+.card.no-tilt .card-face,
+.card.no-tilt .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 1vw;
+    box-sizing: border-box;
+    font-weight: 900;
+}
+
+.card.no-tilt .card-face {
+    color: var(--first-color);
+    font-size: 1.5vmax;
+    padding: 2vmax;
+}
+
+.card.no-tilt .card-back {
+    color: var(--second-color);
+    transform: rotateY(180deg);
+}
+
+.card.no-tilt .card-back {
+    transform: rotateY(180deg);
+    overflow: hidden;
+}
+
+#block2 .card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+#block2 .card-inner {
+    transform-style: preserve-3d;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    transition: transform 0.6s ease-out;
+    border-radius: 1.2vw;
+}
+
+.formulas {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-weight: 900;
+    color: var(--bright);
+}
+
+.EMF {
+    font-size: 2vmin;
+}
+
+.klnW {
+    font-size: 4vmin;
+}
+
+.card.no-tilt,
+.card-back img {
+    text-align: center;
+    object-fit: cover;
+    margin: 1vmin;
+}
+
+.card.no-tilt,
+.card.no-tilt flipped {
+    width: 60%;
+    height: 86%;
+    box-shadow: 0 0 0 #000000, inset 2vmin 2vmin 4vmin var(--first-background-t),
+        inset -2vmin -2vmin 4vmin var(--first-background-t);
+    border-radius: 1.2vw;
+}
+
+.card-back img {
+    width: auto;
+    height: 60%;
+}
+
+/* Для карточек с несколькими портретами */
+
+.card-back.multi-portrait {
+    display: grid !important; /* Принудительно устанавливаем сетку */
+    grid-template-columns: 1fr 1fr 1fr; /* Три равные колонки */
+    grid-template-rows: auto; /* Автоматическая высота строк */
+    gap: 0.5vmin;
+    padding: 0.5vmin;
+}
+
+.card-back.multi-portrait > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-back.multi-portrait .portrait-wrapper,
+.card-back.multi-portrait .nameplate {
+    width: 100%;
+    margin: 0;
+}
+
+.card-back.multi-portrait .portrait-wrapper {
+    height: 70%;
+}
+
+.card-back.multi-portrait .nameplate {
+    font-size: 1.4vmax;
+    min-height: auto;
+}
+
+/* Надпись к портрету */
+.card-back div {
+    width: 100%;
+}
+
+.details-btn {
+    position: absolute;
+    bottom: 1.5vh;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.5vmin;
+    background: var(--first-background);
+    color: var(--first-color);
+    border: 0.5vmin solid var(--second-color);
+    border-radius: 1vmin;
+    cursor: pointer;
+    font-size: 0.7vmax;
+    z-index: 10;
+    font-family: Slide-font;
+}
+
+/* Блок 3: Финальная карточка */
+.final-card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 90vw;
+    padding: 4vh;
+    border: solid var(--second-color) 0.4vw;
+    font-family: Menu1-font;
+    color: var(--second-color);
+    background-color: var(--first-background);
+    box-shadow: 0 0 0 #000000, inset 2vmin 2vmin 4vmin var(--seсond-background),
+        inset -2vmin -2vmin 4vmin var(--seсond-background);
+    border-radius: 1.2vw;
+}
+
+.final-front-content,
+.final-back-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1vmax;
+    font-weight: bold;
+    text-align: center;
+    padding: 4vh 4vw;
+}
+
+.final-front-content {
+    color: var(--first-color);
+    background: var(--first-background);
+    box-shadow: 0 0 0 #000000, inset 2vmin 2vmin 4vmin var(--seсond-background),
+        inset -2vmin -2vmin 4vmin var(--seсond-background);
+}
+.final-back-content {
+    color: var(--second-color);
+    background: var(--first-background);
+    box-shadow: 0 0 0 #000000, inset 2vmin 2vmin 4vmin var(--neutral),
+        inset -2vmin -2vmin 4vmin var(--neutral);
+}
+
+#final-card:last-child {
+    transform: translateY(0);
+}
+#final-card:last-child:hover {
+    transform: translateY(1vh);
+}
+
+/* Модальные окна */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #000000cc;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal h3 {
+    font-family: Menu1-font;
+    color: var(--first-color);
+}
+
+.modal-content {
+    background: var(--first-background-t);
+    color: var(--second-color);
+    padding: 4vh 4vw;
+    border-radius: 1.2vw;
+    max-width: 96vw;
+    width: 96%;
+    height: 96%;
+    position: relative;
+    max-height: 96vh;
+    overflow-y: auto;
+    text-align: center;
+    box-shadow: 0 0 0 #000000, inset 2vmin 2vmin 4vmin var(--third-color),
+        inset -2vmin -2vmin 4vmin var(--third-color);
+}
+
+.close {
+    position: sticky;
+    top: 0;
+    line-height: 1;
+    width: 1.2rem;
+    height: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--second-color);
+    background: var(--first-color);
+    border: 0.5vmin solid var(--second-color);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    /* font-family: p-font; */
+    z-index: 10;
+}
+
+.close:hover {
+    color: var(--first-color);
+    background: var(--second-color);
+    border: 0.5vmin solid var(--first-color);
+}
+
+.modal table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2vh;
+}
+.modal th,
+.modal td {
+    border: 1px solid #ccc;
+    padding: 1vh 1vw;
+    text-align: left;
+}
+.modal th {
+    background: #f0f0f033;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: row;
+        padding: 2vh 2vw;
+    }
+
+    .name {
+        padding-left: 0;
+    }
+
+    .name h1 {
+        font-size: 7vmax;
+    }
+    .main-nav {
+        font-size: 2.2vmax;
+    }
+    .anchor-nav {
+        position: absolute;
+        top: 1vh;
+        right: 1vw;
+        color: var(--seсond-background);
+    }
+
+    .anchor-nav ul {
+        display: none;
+        position: absolute;
+        top: 22vh;
+        right: 1vw;
+        padding: 2vh;
+        border-radius: 1vh;
+        font-size: 2vmax;
+        background: var(--first-background-t);
+    }
+    .anchor-nav.active ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .burger {
+        display: flex;
+    }
+
+    .content-block {
+        width: 98vw;
+        margin-left: 1vw;
+    }
+    .antagonists-container {
+        height: 40vh;
+        padding: 3vh;
+    }
+
+    .card {
+        width: 25vw;
+        height: 50vw;
+    }
+
+    .nameplate-line {
+        font-size: 3vmin;
+    }
+}

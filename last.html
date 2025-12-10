@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Бездна (переосмысление)</title>
+        <link rel="stylesheet" href="common.css" />
+        <link rel="stylesheet" href="last.css" />
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script
+            id="MathJax-script"
+            async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+        ></script>
+    </head>
+    <body>
+        <!-- ШЕЙДЕР-ФОН (перемещён до .scroller) -->
+        <div id="bg"></div>
+
+        <!-- ШАПКА -->
+        <header class="header">
+            <div class="name">
+                <h1>Бездна</h1>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html">Предпосылки</a></li>
+                        <li><a href="next.html">Становление</a></li>
+                        <li><a href="#page3">Переосмысление</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <nav class="anchor-nav">
+                <div class="burger" id="burger-menu">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+
+                <ul class="anchor-links">
+                    <li><a href="#block1">Дихотомия</a></li>
+                    <li><a href="#block2">Развитие</a></li>
+                    <li><a href="#block3">Итог</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- ОСНОВНОЙ КОНТЕНТ -->
+        <main class="main">
+            <!-- БЛОК 1: Антагонисты -->
+            <section id="block1" class="content-block">
+                <div class="antagonists-container">
+                    <div class="card flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="portrait-wrapper">
+                                    <img
+                                        src="Переосмысление/Эверетт.png"
+                                        alt="Ленин"
+                                        class="portrait"
+                                    />
+                                </div>
+                                <div class="nameplate">
+                                    <div class="nameplate-line">Эверетт</div>
+                                    <div class="nameplate-line">
+                                        18##–19## гг
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flip-card-back">
+                                <p>Многовариантность реальности.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="divider" id="divider-trigger">
+                        <div class="bottom-z-pic">
+                            <img
+                                src="Переосмысление/компьютер.png"
+                                alt="Нижнее изображение"
+                            />
+                        </div>
+                        <div class="top-z-pic">
+                            <img
+                                src="Переосмысление/разлом-розовый.png"
+                                alt="Разлом"
+                            />
+                        </div>
+                    </div>
+
+                    <div class="card flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="portrait-wrapper">
+                                    <img
+                                        src="Переосмысление/Бор.png"
+                                        alt="Пуанкаре"
+                                        class="portrait"
+                                    />
+                                </div>
+                                <div class="nameplate">
+                                    <div class="nameplate-line">Бор</div>
+                                    <div class="nameplate-line">
+                                        18##–19## гг
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flip-card-back">
+                                <p>Коллапс волновой функции.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- БЛОК 2: Слайдер Хронологии -->
+            <section id="block2" class="content-block">
+                <div class="slider-container">
+                    <button class="slider-button prev" id="prev">⇧</button>
+                    <div class="slider-wrapper">
+                        <div class="slider-track" id="sliderTrack">
+                            <!-- Слайды и клоны  -->
+                            <div class="slide">
+                                <div class="card no-tilt">
+                                    <div class="card-inner">
+                                        <div class="card-face">
+                                            Корпускулярная теория света.
+                                        </div>
+                                        <div class="card-back">
+                                            <div>Исаак Ньютон</div>
+                                            <img
+                                                src="Предпосылки2/Ньютон.png"
+                                                alt="Исаак Ньютон"
+                                            />
+
+                                            <div>1643 – 1727</div>
+                                        </div>
+                                    </div>
+                                    <button class="details-btn">
+                                        Подробнее
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- <div class="slide">
+                                <div class="card no-tilt">
+                                    <div class="card-inner">
+                                        <div class="card-face">
+                                            Борьба с "Чудовищем Теплорода".
+                                            Гипотеза о кинетической природе
+                                            тепла в веществе.
+                                        </div>
+                                        <div class="card-back">
+                                            <div>Михайло Ломоносов</div>
+                                            <img
+                                                src="Предпосылки2/Ломоносов.png"
+                                                alt="Михаил Ломоносов"
+                                            />
+
+                                            <div>1711 – 1765</div>
+                                        </div>
+                                    </div>
+                                    <button class="details-btn">
+                                        Подробнее
+                                    </button>
+                                </div>
+                            </div> -->
+
+                            <!-- <div class="slide">
+                                <div class="card no-tilt">
+                                    <div class="card-inner">
+                                        <div class="card-face">
+                                            Дифракция света (на краю экрана
+                                            диска)
+                                        </div>
+                                        <div class="card-back">
+                                            <div>Огюстен Френель</div>
+                                            <img
+                                                src="Предпосылки2/Френель.png"
+                                                alt="Огюстен Френель"
+                                            />
+
+                                            <div>1788 – 1827</div>
+                                        </div>
+                                    </div>
+                                    <button class="details-btn">
+                                        Подробнее
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="slide">
+                                <div class="card no-tilt">
+                                    <div class="card-inner">
+                                        <div class="card-face">
+                                            Интерференция света (две щели)
+                                        </div>
+                                        <div class="card-back">
+                                            <div>Томас Юнг</div>
+                                            <img
+                                                src="Предпосылки2/Юнг.png"
+                                                alt="Томас Юнг"
+                                            />
+
+                                            <div>1773 – 1829</div>
+                                        </div>
+                                    </div>
+                                    <button class="details-btn">
+                                        Подробнее
+                                    </button>
+                                </div>
+                            </div> -->
+
+                            <div class="slide">
+                                <div class="card no-tilt">
+                                    <div class="card-inner">
+                                        <div class="card-face">
+                                            Электромагнитная индукция
+                                        </div>
+                                        <div class="card-back">
+                                            <div>Майкл Фарадей</div>
+                                            <img
+                                                src="Предпосылки2/Фарадей.png"
+                                                alt="Майкл Фарадей"
+                                            />
+
+                                            <div>1791 – 1867</div>
+                                        </div>
+                                    </div>
+                                    <button class="details-btn">
+                                        Подробнее
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Максвелл -->
+                            <div class="slide">
+                                <div class="card no-tilt">
+                                    <div class="card-inner">
+                                        <div class="card-face">
+                                            Единая теория электричества,
+                                            магнетизма и света
+
+                                            <div class="formulas EMF">
+                                                $$\nabla \cdot \mathbf{E} =
+                                                \frac{\rho}{\varepsilon_0}$$
+                                                $$\nabla \cdot \mathbf{B} = 0$$
+                                                $$\nabla \times \mathbf{E} =
+                                                -\frac{\partial
+                                                \mathbf{B}}{\partial t}$$
+                                                $$\nabla \times \mathbf{B} =
+                                                \mu_0\mathbf{J} +
+                                                \mu_0\varepsilon_0\frac{\partial
+                                                \mathbf{E}}{\partial t}$$
+                                            </div>
+                                        </div>
+
+                                        <div class="card-back">
+                                            <div>Джеймс Клерк Максвелл</div>
+                                            <img
+                                                src="Предпосылки2/Максвелл.png"
+                                                alt="Джеймс Клерк Максвелл"
+                                            />
+
+                                            <div>1831 – 1879</div>
+                                        </div>
+                                    </div>
+                                    <button class="details-btn">
+                                        Подробнее
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Больцман -->
+                            <div class="slide">
+                                <div class="card no-tilt">
+                                    <div class="card-inner">
+                                        <div class="card-face">
+                                            <div class="card-face">
+                                                Кинетическая теория газов
+                                                <div class="formulas klnW">
+                                                    $$S = k \ln W$$
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-back">
+                                            <div>Людвиг Больцман</div>
+                                            <img
+                                                src="Предпосылки2\Больцман.png"
+                                                alt="Больцман"
+                                            />
+
+                                            <div>1844 – 1906</div>
+                                        </div>
+                                        <!-- 
+                                        <div class="card-back multi-portrait">                                            
+                                            <div>
+                                                <div class="portrait-wrapper">
+                                                    <img
+                                                        src="Предпосылки2\Портрет1.png"
+                                                        alt="Портрет1"
+                                                        class="portrait"
+                                                    />
+                                                </div>
+                                                <div class="nameplate">
+                                                    <div class="nameplate-line">
+                                                        Портрет1
+                                                    </div>
+                                                    <div class="nameplate-line">
+                                                        1234 - 1234
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div>
+                                                <div class="portrait-wrapper">
+                                                    <img
+                                                        src="Предпосылки2\Портрет2.png"
+                                                        alt="Портрет2"
+                                                        class="portrait"
+                                                    />
+                                                </div>
+                                                <div class="nameplate">
+                                                    <div class="nameplate-line">
+                                                        Портрет2
+                                                    </div>
+                                                    <div class="nameplate-line">
+                                                        222
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div>
+                                                <div class="portrait-wrapper">
+                                                    <img
+                                                        src="Предпосылки2\Портрет3.png"
+                                                        alt="Портрет3"
+                                                        class="portrait"
+                                                    />
+                                                </div>
+                                                <div class="nameplate">
+                                                    <div class="nameplate-line">
+                                                        Портрет3
+                                                    </div>
+                                                    <div class="nameplate-line">
+                                                        222
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div> -->
+                                    </div>
+                                    <button class="details-btn">
+                                        Подробнее
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="slide">
+                                <div class="card no-tilt">
+                                    <div class="card-inner">
+                                        <div class="card-face">
+                                            Практическое подтверждение
+                                            существования электромагнитных волн
+                                        </div>
+                                        <div class="card-back">
+                                            <div>Генрих Герц</div>
+                                            <img
+                                                src="Предпосылки2/Герц.png"
+                                                alt="Генрих Герц"
+                                            />
+
+                                            <div>1857 – 1894</div>
+                                        </div>
+                                    </div>
+                                    <button class="details-btn">
+                                        Подробнее
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="slider-button next" id="next">⇩</button>
+                    <div class="slider-dots" id="dotsContainer"></div>
+                </div>
+            </section>
+
+            <!-- БЛОК 3: Финальная карточка -->
+            <section id="block3" class="content-block">
+                <div class="final-card-container">
+                    <div class="card flip-card final" id="final-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="final-front-content">
+                                    Завершение текущего этапа
+                                </div>
+                            </div>
+                            <div class="flip-card-back">
+                                <div class="final-back-content">
+                                    Открытие следующего этапа
+                                    <button
+                                        class="details-btn final-details-btn"
+                                    >
+                                        Подробнее
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- ПОДВАЛ -->
+        <footer class="footer">
+            &copy; Проект "Бездна" обзор квантовой физики
+        </footer>
+
+        <!-- МОДАЛЬНЫЕ ОКНА -->
+
+        <!-- Для разлома -->
+        <div class="modal" id="divider-modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <table>
+                    <tr>
+                        <th>Перспектива А</th>
+                        <th>Перспектива Б</th>
+                    </tr>
+                    <tr>
+                        <td>Точка зрения 1</td>
+                        <td>Точка зрения 2</td>
+                    </tr>
+                    <tr>
+                        <td>Аргумент 1</td>
+                        <td>Аргумент 2</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- Для слайда -->
+        <div class="modal" id="details-modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div class="modal-text"></div>
+            </div>
+        </div>
+
+        <!-- 3minJS -->
+        <script src="three.min.js"></script>
+
+        <!-- Шейдер-фон -->
+        <script src="Переосмысление\bg-P3.js"></script>
+
+        <script src="main.js"></script>
+    </body>
+</html>
