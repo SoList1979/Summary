@@ -485,6 +485,7 @@ p {
     padding: 1vw;
     box-sizing: border-box;
     font-weight: 900;
+    border: solid 1vmin;
 }
 
 .card.no-tilt .card-face {
@@ -544,8 +545,8 @@ p {
 .card.no-tilt flipped {
     width: 60%;
     height: 86%;
-    box-shadow: 0 0 0 #000000, inset 2vmin 2vmin 4vmin var(--first-background-t),
-        inset -2vmin -2vmin 4vmin var(--first-background-t);
+    /* box-shadow: 0 0 0 #000000, inset 2vmin 2vmin 4vmin var(--neutral),
+        inset -2vmin -2vmin 4vmin var(--neutral); */
     border-radius: 1.2vw;
 }
 
